@@ -121,7 +121,7 @@ Target: under £30 a month for the Azure side. I'll post the real numbers once i
 
 ## Follow along
 
-I'm posting progress on [LinkedIn](https://www.linkedin.com/in/YOUR-PROFILE). If you've self-hosted NetBird or done something similar and have advice, open an issue or get in touch.
+I'm posting progress on [LinkedIn](https://www.linkedin.com/in/cameron-paterson-0a9817230/). If you've self-hosted NetBird or done something similar and have advice, open an issue or get in touch.
 
 ## Licence
 
