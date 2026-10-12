@@ -1,6 +1,7 @@
 locals {
   location = "uksouth"
   project  = "ztlab" # short form of zero-trust-lab, used in Azure resource names
+  suffix = "mxojs8"
 
   tags = {
     project    = "zero-trust-lab"
@@ -12,13 +13,6 @@ locals {
 # Who is running this? Used to grant yourself access to the state container.
 data "azurerm_client_config" "current" {}
 
-# Random suffix so the storage account name is globally unique.
-resource "random_string" "suffix" {
-  length  = 6
-  upper   = false
-  special = false
-}
-
 # Dedicated resource group, kept separate from the lab so destroying the lab
 # can never take its own state with it.
 resource "azurerm_resource_group" "tfstate" {
@@ -28,7 +22,7 @@ resource "azurerm_resource_group" "tfstate" {
 }
 
 resource "azurerm_storage_account" "tfstate" {
-  name                     = "st${local.project}tfstate${random_string.suffix.result}"
+  name                     = "st${local.project}tfstate${local.suffix}"
   resource_group_name      = azurerm_resource_group.tfstate.name
   location                 = azurerm_resource_group.tfstate.location
   account_kind             = "StorageV2"
