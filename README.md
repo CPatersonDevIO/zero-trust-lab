@@ -2,7 +2,7 @@
 
 Rebuilding my homelab from scratch, this time with zero-trust access, everything in code, and security checks in the pipeline. I'm building it in public, so this repo will show the whole journey, including the bits that break.
 
-> **Status:** Early days. Planning and initial Terraform. See the [progress log](#progress-log) below.
+> **Status:** Azure Terraform written, Tailscale dependency removed and Azure VM accessible via Netbird. See the [progress log](#progress-log) below.
 
 ## Why
 
@@ -92,10 +92,13 @@ Each folder has its own Terraform state, and each workflow only runs when its ow
 - [x] Remote state backend
 - [x] Networking (VNet, subnet, NSG)
 - [x] Ubuntu VM with cloud-init
-- [ ] NetBird running in Docker Compose
-- [ ] Entra ID SSO
-- [ ] DNS through Cloudflare
-- [ ] First peers connected
+- [x] NetBird running in Docker Compose
+- [x] Entra ID SSO
+- [x] DNS through Cloudflare
+- [x] First peers connected
+- [x] Least-privilege access policies (replaced default allow-all)
+- [x] Bootstrap access via Tailscale, then removed
+- [ ] NetBird backups
 
 **Phase 2: Pipeline**
 - [ ] GitHub Actions running `terraform plan` on pull requests
@@ -118,8 +121,9 @@ Target: under £30 a month for the Azure side. I'll post the real numbers once i
 | Date | Update |
 | --- | --- |
 | Oct 2026 | Repo created, plan written up |
-| Oct 2026 | Moved to UK West because of UK South resource limitations |
-| Oct 2026 | Using Tailscale as temporary boostrap access |
+| 12 Oct 2026 | Remote state backend built; bootstrap state migrated into it |
+| 18 Oct 2026 | VM in UK West (B-series quota), NetBird live, Entra SSO with Conditional Access MFA, Tailscale bootstrap removed, allow-all policy replaced |
+
 
 ## Follow along
 
