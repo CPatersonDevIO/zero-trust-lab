@@ -89,9 +89,9 @@ Each folder has its own Terraform state, and each workflow only runs when its ow
 ## Roadmap
 
 **Phase 1: NetBird on Azure**
-- [ ] Remote state backend
-- [ ] Networking (VNet, subnet, NSG)
-- [ ] Ubuntu VM with cloud-init
+- [x] Remote state backend
+- [x] Networking (VNet, subnet, NSG)
+- [x] Ubuntu VM with cloud-init
 - [ ] NetBird running in Docker Compose
 - [ ] Entra ID SSO
 - [ ] DNS through Cloudflare
@@ -118,6 +118,8 @@ Target: under £30 a month for the Azure side. I'll post the real numbers once i
 | Date | Update |
 | --- | --- |
 | Oct 2026 | Repo created, plan written up |
+| Oct 2026 | Moved to UK West because of UK South resource limitations |
+| Oct 2026 | Using Tailscale as temporary boostrap access |
 
 ## Follow along
 

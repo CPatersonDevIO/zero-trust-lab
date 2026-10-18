@@ -11,4 +11,3 @@ runcmd:
   - systemctl enable --now docker
   # Temporary bootstrap access. Remove once NetBird is live.
   - curl -fsSL https://tailscale.com/install.sh | sh
-  - tailscale up --authkey=${tailscale_auth_key} --ssh --hostname=vm-ztlab-netbird-ukw

@@ -1,9 +1,3 @@
-variable "tailscale_auth_key" {
-  description = "Single-use Tailscale auth key for bootstrap access. Removed once NetBird is live."
-  type        = string
-  sensitive   = true
-}
-
 variable "vm_size" {
   description = "Azure VM size for the NetBird server"
   type        = string

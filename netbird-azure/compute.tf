@@ -41,7 +41,12 @@ resource "azurerm_linux_virtual_machine" "netbird" {
     version   = "latest"
   }
 
+  lifecycle {
+    ignore_changes  = [custom_data]
+    prevent_destroy = true
+  }
+
   custom_data = base64encode(templatefile("${path.module}/cloud-init.yaml", {
-    tailscale_auth_key = var.tailscale_auth_key
+    
   }))
 }
