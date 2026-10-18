@@ -1,8 +1,8 @@
 locals {
-  location = "uksouth"
+  location = "ukwest"
   project  = "ztlab"
   workload = "netbird"
-  region   = "uks"
+  region   = "ukw"
 
   # Builds "ztlab-netbird-uks" once, so every name below uses it
   name_suffix = "${local.project}-${local.workload}-${local.region}"

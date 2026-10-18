@@ -58,7 +58,7 @@ resource "azurerm_network_security_group" "netbird" {
     destination_address_prefix = "*"
   }
 }
-  
+
 
 resource "azurerm_subnet_network_security_group_association" "netbird" {
   subnet_id                 = azurerm_subnet.netbird.id
